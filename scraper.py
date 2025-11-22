@@ -8,7 +8,7 @@ from datetime import datetime
 # 設定
 BASE_URL = "https://www.ptt.cc/bbs/MacShop/index.html"
 DOMAIN = "https://www.ptt.cc"
-PAGES_TO_SCRAPE = 3  # 建議改小一點 (3~5頁)，因為現在要進內文抓價格，請求數會變多
+PAGES_TO_SCRAPE = 3  # 抓取頁數
 
 def get_posts(pages=3):
     """ 抓取最近 x 頁的資料 """
@@ -31,7 +31,6 @@ def get_posts(pages=3):
             soup = BeautifulSoup(resp.text, "html.parser")
             divs = soup.find_all("div", class_="r-ent")
             
-            # 收集這一頁所有符合條件的文章連結，稍後再一次處理
             items_to_process = []
 
             for div in divs:
@@ -43,7 +42,6 @@ def get_posts(pages=3):
                     link = DOMAIN + title_div.a["href"]
                     date = div.find("div", class_="date").text.strip()
                     
-                    # 初步過濾：只抓 [販售]
                     if "[販售]" in raw_title and "Re:" not in raw_title and "公告" not in raw_title:
                         category = classify(raw_title)
                         if category != "Other":
@@ -57,15 +55,13 @@ def get_posts(pages=3):
                 except Exception as e:
                     print(f"Error parsing list item: {e}")
 
-            # 開始逐一進入內文抓價格
             for item in items_to_process:
                 print(f"  Checking price for: {item['title'][:20]}...")
-                price = get_price_from_content(scraper, item['link'])
-                item['price'] = price
+                # 這裡會呼叫修正後的價格抓取函式
+                item['price'] = get_price_from_content(scraper, item['link'])
                 posts.append(item)
-                time.sleep(0.5) # 重要：每抓一篇內文休息 0.5 秒，避免被擋
+                time.sleep(0.5)
 
-            # 翻下一頁
             btn = soup.find("a", string="‹ 上頁")
             if btn:
                 url = DOMAIN + btn["href"]
@@ -81,7 +77,7 @@ def get_posts(pages=3):
     return posts
 
 def get_price_from_content(scraper, link):
-    """ 進入文章內文，抓取 [售價] 後面的數字 """
+    """ 進入文章內文，抓取 [售價] 後面的數字 (修正版) """
     try:
         resp = scraper.get(link)
         if resp.status_code != 200: return "詳內文"
@@ -93,18 +89,19 @@ def get_price_from_content(scraper, link):
         
         text = main_content.text
         
-        # 針對你的截圖格式優化 Regex
-        # 尋找 [售價] 或 [欲售價格]
-        # 允許中間有換行 (\s*)
-        # 抓取後面的數字 (包含逗號)
-        match = re.search(r'\[(?:售價|欲售價格)\](?:[:：])?\s*(\$?\d{1,3}(?:,\d{3})*)', text)
+        # --- 修正重點 ---
+        # 舊的 regex: (\d{1,3}(?:,\d{3})*) -> 會把 3300 切成 330
+        # 新的 regex: ([0-9,]+) -> 只要是數字或逗號，不管幾個，全部抓起來
+        match = re.search(r'\[(?:售價|欲售價格)\](?:[:：])?\s*(\$?\s?[0-9,]+)', text)
         
         if match:
             price_str = match.group(1)
-            # 簡單過濾：如果抓到的只是 "1" (數量) 或太小的數字，可能不是價格
-            num_only = price_str.replace('$', '').replace(',', '')
+            # 清理資料：把 $ 和 , 拿掉，只留純數字
+            num_only = re.sub(r'[^\d]', '', price_str)
+            
+            # 判斷是否為合理價格 (大於 100 塊)
             if num_only.isdigit() and int(num_only) > 100:
-                return f"${num_only}" # 統一加上 $ 符號
+                return f"${num_only}" 
                 
     except Exception as e:
         print(f"    Error fetching content: {e}")
@@ -112,45 +109,15 @@ def get_price_from_content(scraper, link):
     return "詳內文"
 
 def classify(title):
-    """ 
-    分類邏輯優化版：
-    1. 使用 .lower() 忽略大小寫
-    2. 加入常見簡寫 (如 mbp, mba, i15, s9)
-    """
-    t = title.lower() # 關鍵：把標題全部轉小寫，這樣 IPHONE 和 iphone 都會變成 iphone
-    
-    # iPhone: 抓 iphone 或是常見代號 (如 i12, i13, i14, i15, i16)
-    if any(x in t for x in ["iphone", "i12", "i13", "i14", "i15", "i16", "se2", "se3"]): 
-        return "iPhone"
-    
-    # iPad
-    if "ipad" in t: 
-        return "iPad"
-    
-    # MacBook: 抓 macbook, mac book, 或是簡寫 mbp, mba, mac mini
-    if any(x in t for x in ["macbook", "mac book", "mbp", "mba", "mac mini", "mac studio"]): 
-        return "MacBook"
-    
-    # Apple Watch: 抓 watch, 或是常見代數 s7, s8, s9, s10, ultra
-    if any(x in t for x in ["Watch", "watch", "s11", "s8", "s9", "s10", "ultra"]): 
-        return "Apple Watch"
-    
-    # AirPods
-    if "airpods" in t or "air pods" in t: 
-        return "AirPods"
-    
-    # HomePod
-    if "homepod" in t: 
-        return "HomePod"
-    
-    # AirTag
-    if "airtag" in t: 
-        return "AirTag"
-    
-    # Apple TV
-    if "apple tv" in t or "appletv" in t:
-        return "Apple TV"
-    
+    t = title.lower()
+    if any(x in t for x in ["iphone", "i12", "i13", "i14", "i15", "i16", "se2", "se3"]): return "iPhone"
+    if "ipad" in t: return "iPad"
+    if any(x in t for x in ["macbook", "mac book", "mbp", "mba", "mac mini", "mac studio"]): return "MacBook"
+    if any(x in t for x in ["watch", "s8", "s9", "s10", "ultra"]): return "Apple Watch"
+    if "airpods" in t or "air pods" in t: return "AirPods"
+    if "homepod" in t: return "HomePod"
+    if "airtag" in t: return "AirTag"
+    if "apple tv" in t or "appletv" in t: return "Apple TV"
     return "Other"
 
 def extract_location(title):
