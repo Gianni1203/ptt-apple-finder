@@ -8,9 +8,9 @@ from datetime import datetime
 # 設定
 BASE_URL = "https://www.ptt.cc/bbs/MacShop/index.html"
 DOMAIN = "https://www.ptt.cc"
-PAGES_TO_SCRAPE = 3  # 抓取頁數
+PAGES_TO_SCRAPE = 5  # <--- 已修改：改為爬 5 頁
 
-def get_posts(pages=3):
+def get_posts(pages=5):
     """ 抓取最近 x 頁的資料 """
     posts = []
     url = BASE_URL
@@ -42,6 +42,7 @@ def get_posts(pages=3):
                     link = DOMAIN + title_div.a["href"]
                     date = div.find("div", class_="date").text.strip()
                     
+                    # 過濾：只抓 [販售]
                     if "[販售]" in raw_title and "Re:" not in raw_title and "公告" not in raw_title:
                         category = classify(raw_title)
                         if category != "Other":
@@ -55,13 +56,16 @@ def get_posts(pages=3):
                 except Exception as e:
                     print(f"Error parsing list item: {e}")
 
+            # 進入內文抓價格
             for item in items_to_process:
                 print(f"  Checking price for: {item['title'][:20]}...")
-                # 這裡會呼叫修正後的價格抓取函式
                 item['price'] = get_price_from_content(scraper, item['link'])
                 posts.append(item)
-                time.sleep(0.5)
+                
+                # <--- 已修改：休息時間改為 1 秒 (更安全)
+                time.sleep(1) 
 
+            # 翻下一頁
             btn = soup.find("a", string="‹ 上頁")
             if btn:
                 url = DOMAIN + btn["href"]
@@ -77,7 +81,7 @@ def get_posts(pages=3):
     return posts
 
 def get_price_from_content(scraper, link):
-    """ 進入文章內文，抓取 [售價] 後面的數字 (修正版) """
+    """ 進入文章內文，抓取 [售價] 後面的數字 """
     try:
         resp = scraper.get(link)
         if resp.status_code != 200: return "詳內文"
@@ -89,17 +93,13 @@ def get_price_from_content(scraper, link):
         
         text = main_content.text
         
-        # --- 修正重點 ---
-        # 舊的 regex: (\d{1,3}(?:,\d{3})*) -> 會把 3300 切成 330
-        # 新的 regex: ([0-9,]+) -> 只要是數字或逗號，不管幾個，全部抓起來
+        # 使用寬鬆規則：抓取數字和逗號
         match = re.search(r'\[(?:售價|欲售價格)\](?:[:：])?\s*(\$?\s?[0-9,]+)', text)
         
         if match:
             price_str = match.group(1)
-            # 清理資料：把 $ 和 , 拿掉，只留純數字
             num_only = re.sub(r'[^\d]', '', price_str)
             
-            # 判斷是否為合理價格 (大於 100 塊)
             if num_only.isdigit() and int(num_only) > 100:
                 return f"${num_only}" 
                 
