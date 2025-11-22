@@ -2,7 +2,7 @@ name: Scrape PTT MacShop
 
 on:
   schedule:
-    - cron: '0 */2 * * *' # 每 2 小時自動執行一次 (UTC 時間)
+    - cron: '0 */12 * * *' # 每 12 小時自動執行一次 (UTC 時間)
   workflow_dispatch:      # 允許你在 Actions 分頁手動點擊按鈕執行
 
 permissions:
