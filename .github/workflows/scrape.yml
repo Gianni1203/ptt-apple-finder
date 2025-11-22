@@ -34,6 +34,18 @@ jobs:
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
-        git pull --rebase  # <--- 加入這一行：推送前先抓取最新版
+        
+        # 步驟 1：先把剛爬到的 data.json 加入暫存
         git add data.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update data.json" && git push)
+        
+        # 步驟 2：直接 Commit！
+        # 這樣檔案就從「Unstaged (未保存)」變成「Committed (已保存)」
+        # 加上 || exit 0 是為了防止如果沒有資料變更時報錯
+        git diff --staged --quiet || git commit -m "Update data.json"
+        
+        # 步驟 3：現在檔案安全了，我們可以跟遠端同步 (Pull)
+        # 這樣就算你在網頁上改了程式碼，機器人會把你的修改合併進來
+        git pull --rebase
+        
+        # 步驟 4：最後推上去
+        git push
