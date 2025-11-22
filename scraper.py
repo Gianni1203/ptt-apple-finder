@@ -5,88 +5,74 @@ import time
 import re
 from datetime import datetime
 
-# PTT MacShop 版網址
+# 設定
 BASE_URL = "https://www.ptt.cc/bbs/MacShop/index.html"
 DOMAIN = "https://www.ptt.cc"
+PAGES_TO_SCRAPE = 3  # 建議改小一點 (3~5頁)，因為現在要進內文抓價格，請求數會變多
 
-def get_posts(pages=10):
+def get_posts(pages=3):
     """ 抓取最近 x 頁的資料 """
     posts = []
     url = BASE_URL
     
-    # 建立一個能繞過 Cloudflare 的 scraper
+    # 建立 scraper
     scraper = cloudscraper.create_scraper()
 
-    print(f"Start scraping from: {url}")
+    print(f"Start scraping from: {url} (Target: {pages} pages)")
 
     for i in range(pages):
-        print(f"Processing page {i+1}...")
+        print(f"Processing list page {i+1}...")
         try:
-            # 改用 scraper.get
             resp = scraper.get(url)
-            
-            # Debug: 印出狀態碼
             if resp.status_code != 200:
-                print(f"Failed to fetch {url}, status: {resp.status_code}")
-                # 如果被擋，通常會是 403 或 503
+                print(f"Failed to fetch list {url}")
                 break
             
             soup = BeautifulSoup(resp.text, "html.parser")
-            
-            # Debug: 印出網頁標題，確認是否真的進到 PTT
-            page_title = soup.title.text if soup.title else "No Title"
-            print(f"Page Title: {page_title}")
-            
-            # 如果標題包含 "Just a moment" 或 "Access denied"，代表還是被擋
-            if "Just a moment" in page_title or "Access denied" in page_title:
-                print("Blocked by Cloudflare challenge.")
-                break
-
             divs = soup.find_all("div", class_="r-ent")
             
-            # Debug: 確認這頁有抓到幾篇文章
-            print(f"Found {len(divs)} articles on this page.")
+            # 收集這一頁所有符合條件的文章連結，稍後再一次處理
+            items_to_process = []
 
-            if len(divs) == 0:
-                # 有可能是結構變了，或是抓到了錯誤的頁面
-                print("Warning: No articles found. The HTML structure might be different or blocked.")
-            
             for div in divs:
                 try:
                     title_div = div.find("div", class_="title")
-                    if not title_div or not title_div.a:
-                        continue
+                    if not title_div or not title_div.a: continue
                     
                     raw_title = title_div.a.text.strip()
                     link = DOMAIN + title_div.a["href"]
                     date = div.find("div", class_="date").text.strip()
                     
-                    # 邏輯：只抓 [販售] 且排除 Re: (回文) 與公告
+                    # 初步過濾：只抓 [販售]
                     if "[販售]" in raw_title and "Re:" not in raw_title and "公告" not in raw_title:
-                        
                         category = classify(raw_title)
                         if category != "Other":
-                            posts.append({
+                            items_to_process.append({
                                 "title": raw_title,
                                 "link": link,
                                 "date": date,
                                 "category": category,
-                                "location": extract_location(raw_title),
-                                "price": extract_price(raw_title)
+                                "location": extract_location(raw_title)
                             })
                 except Exception as e:
-                    print(f"Error parsing post: {e}")
+                    print(f"Error parsing list item: {e}")
 
-            # 找出「上一頁」
+            # 開始逐一進入內文抓價格
+            for item in items_to_process:
+                print(f"  Checking price for: {item['title'][:20]}...")
+                price = get_price_from_content(scraper, item['link'])
+                item['price'] = price
+                posts.append(item)
+                time.sleep(0.5) # 重要：每抓一篇內文休息 0.5 秒，避免被擋
+
+            # 翻下一頁
             btn = soup.find("a", string="‹ 上頁")
             if btn:
                 url = DOMAIN + btn["href"]
             else:
-                print("No more pages.")
                 break
                 
-            # 隨機暫停 2~5 秒，模擬人類行為，避免太規律被抓
-            time.sleep(3)
+            time.sleep(1) 
             
         except Exception as e:
             print(f"Error requesting {url}: {e}")
@@ -94,15 +80,77 @@ def get_posts(pages=10):
             
     return posts
 
+def get_price_from_content(scraper, link):
+    """ 進入文章內文，抓取 [售價] 後面的數字 """
+    try:
+        resp = scraper.get(link)
+        if resp.status_code != 200: return "詳內文"
+        
+        soup = BeautifulSoup(resp.text, "html.parser")
+        main_content = soup.find(id="main-content")
+        
+        if not main_content: return "詳內文"
+        
+        text = main_content.text
+        
+        # 針對你的截圖格式優化 Regex
+        # 尋找 [售價] 或 [欲售價格]
+        # 允許中間有換行 (\s*)
+        # 抓取後面的數字 (包含逗號)
+        match = re.search(r'\[(?:售價|欲售價格)\](?:[:：])?\s*(\$?\d{1,3}(?:,\d{3})*)', text)
+        
+        if match:
+            price_str = match.group(1)
+            # 簡單過濾：如果抓到的只是 "1" (數量) 或太小的數字，可能不是價格
+            num_only = price_str.replace('$', '').replace(',', '')
+            if num_only.isdigit() and int(num_only) > 100:
+                return f"${num_only}" # 統一加上 $ 符號
+                
+    except Exception as e:
+        print(f"    Error fetching content: {e}")
+        
+    return "詳內文"
+
 def classify(title):
-    t = title.lower()
-    if "iphone" in t: return "iPhone"
-    if "ipad" in t: return "iPad"
-    if "watch" in t: return "Apple Watch"
-    if "homepod" in t: return "HomePod"
-    if "airtag" in t: return "AirTag"
-    if "macbook" in t: return "MacBook"
-    if "airpods" in t: return "AirPods"
+    """ 
+    分類邏輯優化版：
+    1. 使用 .lower() 忽略大小寫
+    2. 加入常見簡寫 (如 mbp, mba, i15, s9)
+    """
+    t = title.lower() # 關鍵：把標題全部轉小寫，這樣 IPHONE 和 iphone 都會變成 iphone
+    
+    # iPhone: 抓 iphone 或是常見代號 (如 i12, i13, i14, i15, i16)
+    if any(x in t for x in ["iphone", "i12", "i13", "i14", "i15", "i16", "se2", "se3"]): 
+        return "iPhone"
+    
+    # iPad
+    if "ipad" in t: 
+        return "iPad"
+    
+    # MacBook: 抓 macbook, mac book, 或是簡寫 mbp, mba, mac mini
+    if any(x in t for x in ["macbook", "mac book", "mbp", "mba", "mac mini", "mac studio"]): 
+        return "MacBook"
+    
+    # Apple Watch: 抓 watch, 或是常見代數 s7, s8, s9, s10, ultra
+    if any(x in t for x in ["Watch", "watch", "s11", "s8", "s9", "s10", "ultra"]): 
+        return "Apple Watch"
+    
+    # AirPods
+    if "airpods" in t or "air pods" in t: 
+        return "AirPods"
+    
+    # HomePod
+    if "homepod" in t: 
+        return "HomePod"
+    
+    # AirTag
+    if "airtag" in t: 
+        return "AirTag"
+    
+    # Apple TV
+    if "apple tv" in t or "appletv" in t:
+        return "Apple TV"
+    
     return "Other"
 
 def extract_location(title):
@@ -112,16 +160,8 @@ def extract_location(title):
             return loc
     return ""
 
-def extract_price(title):
-    match = re.search(r'\$?\s?(\d{1,3}(?:,\d{3})*)', title)
-    if match:
-        num_str = match.group(1).replace(',', '')
-        if num_str.isdigit() and int(num_str) > 500:
-            return f"${num_str}"
-    return "詳內文"
-
 if __name__ == "__main__":
-    data = get_posts(pages=10)
+    data = get_posts(pages=PAGES_TO_SCRAPE)
     
     output = {
         "updated_at": datetime.now().strftime("%Y/%m/%d %H:%M"),
@@ -131,4 +171,4 @@ if __name__ == "__main__":
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
         
-    print(f"Done! Scraped {len(data)} items. Saved to data.json.")
+    print(f"Done! Scraped {len(data)} items.")
