@@ -3,14 +3,15 @@ from bs4 import BeautifulSoup
 import json
 import time
 import re
+import random  # <--- 新增 random 模組
 from datetime import datetime
 
 # 設定
 BASE_URL = "https://www.ptt.cc/bbs/MacShop/index.html"
 DOMAIN = "https://www.ptt.cc"
-PAGES_TO_SCRAPE = 5  # <--- 已修改：改為爬 5 頁
+PAGES_TO_SCRAPE = 10  # <--- 改為爬 10 頁
 
-def get_posts(pages=5):
+def get_posts(pages=10):
     """ 抓取最近 x 頁的資料 """
     posts = []
     url = BASE_URL
@@ -62,8 +63,10 @@ def get_posts(pages=5):
                 item['price'] = get_price_from_content(scraper, item['link'])
                 posts.append(item)
                 
-                # <--- 已修改：休息時間改為 1 秒 (更安全)
-                time.sleep(1) 
+                # <--- 重要修改：隨機休息 1.5 ~ 3 秒
+                # 這樣看起來更像人類，不容易被擋，且 10 頁跑完約需 5~8 分鐘，非常安全
+                sleep_time = random.uniform(1.5, 3)
+                time.sleep(sleep_time) 
 
             # 翻下一頁
             btn = soup.find("a", string="‹ 上頁")
@@ -71,8 +74,9 @@ def get_posts(pages=5):
                 url = DOMAIN + btn["href"]
             else:
                 break
-                
-            time.sleep(1) 
+            
+            # 翻頁時也隨機休息一下
+            time.sleep(random.uniform(1, 2)) 
             
         except Exception as e:
             print(f"Error requesting {url}: {e}")
