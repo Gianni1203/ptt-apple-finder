@@ -1,0 +1,38 @@
+name: Scrape PTT MacShop
+
+on:
+  schedule:
+    - cron: '0 */2 * * *' # 每 2 小時自動執行一次 (UTC 時間)
+  workflow_dispatch:      # 允許你在 Actions 分頁手動點擊按鈕執行
+
+permissions:
+  contents: write         # 給予寫入權限，這樣才能把 data.json 存回去
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4
+
+    - name: Run Scraper
+      run: |
+        python scraper.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add data.json
+        # 如果沒有變更就不 commit，避免錯誤
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update data.json" && git push)
