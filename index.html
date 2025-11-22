@@ -86,7 +86,7 @@
             },
             mounted() {
                 // 讀取爬蟲產生的 JSON 檔
-                fetch('./data.json')
+                fetch('./data.json?t=' + new Date().getTime())
                     .then(res => res.json())
                     .then(data => {
                         this.rawData = data.data;
@@ -102,4 +102,5 @@
         }).mount('#app')
     </script>
 </body>
+
 </html>
