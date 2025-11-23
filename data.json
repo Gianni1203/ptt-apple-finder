@@ -1,8 +1,8 @@
 {
-  "updated_at": "2025/11/23 01:22",
+  "updated_at": "2025/11/23 02:01",
   "data": [
     {
-      "title": "[販售] 台中 iPad  11 128G銀 全新",
+      "title": "[販售] 台中 iPad 11 128G銀 全新",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1763859642.A.325.html",
       "date": "11/23",
       "category": "iPad",
@@ -24,6 +24,14 @@
       "category": "Apple Watch",
       "location": "台中",
       "price": "詳內文"
+    },
+    {
+      "title": "[販售] 台北 AirPods Pro 3全新",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1763861728.A.5D7.html",
+      "date": "11/23",
+      "category": "AirPods",
+      "location": "台北",
+      "price": "$6800"
     },
     {
       "title": "[販售] 台北 AirPods 2 充電盒+右耳",
@@ -722,7 +730,7 @@
       "price": "$48000"
     },
     {
-      "title": "[販售] 台中 iPhone 15 pro 256g 黑 17000",
+      "title": "[販售] 台中 iPhone 15 pro 256g 黑 已售出",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1763745600.A.D3A.html",
       "date": "11/22",
       "category": "iPhone",
