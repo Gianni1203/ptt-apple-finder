@@ -1,6 +1,22 @@
 {
-  "updated_at": "2025/11/30 08:37",
+  "updated_at": "2025/11/30 12:45",
   "data": [
+    {
+      "title": "[販售] 新竹 AirPods  4降噪 二手保固中",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764504551.A.77D.html",
+      "date": "11/30",
+      "category": "AirPods",
+      "location": "新竹",
+      "price": "$3500"
+    },
+    {
+      "title": "[販售] 台南 iPhone 17 pro max 256g 銀",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764506186.A.B5F.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "台南",
+      "price": "$41000"
+    },
     {
       "title": "[販售] 台南 iPhone 15 Pro 128g 藍色",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1764488261.A.7D6.html",
@@ -31,6 +47,94 @@
       "date": "11/30",
       "category": "iPhone",
       "location": "",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 雙北 iphone 15 pro 256G 原鈦",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764492614.A.F2F.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "",
+      "price": "$17000"
+    },
+    {
+      "title": "[販售] 新竹 iPhone 13 mini 128g 黑",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764492741.A.6BF.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "新竹",
+      "price": "$7000"
+    },
+    {
+      "title": "[販售] 北桃 iPhone 15 plus 256G 綠",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764493222.A.66D.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "",
+      "price": "$15000"
+    },
+    {
+      "title": "[販售] 台北 AirPods 4 主動式降噪款",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764493560.A.4D0.html",
+      "date": "11/30",
+      "category": "AirPods",
+      "location": "台北",
+      "price": "$4500"
+    },
+    {
+      "title": "[販售] 北桃 iPhone 13 Pro 256GB 松嶺青色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764494003.A.7FC.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "",
+      "price": "$9000"
+    },
+    {
+      "title": "[販售]  中彰 iPhone 14 Pro 256G 深紫色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764494107.A.3B0.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "",
+      "price": "$10500"
+    },
+    {
+      "title": "[販售] 全國 iPad Pro 12.9’ M1 128G 銀色 Wifi",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764494932.A.90B.html",
+      "date": "11/30",
+      "category": "iPad",
+      "location": "",
+      "price": "$18000"
+    },
+    {
+      "title": "[販售] 高雄 iphone 13 pro max 256g / 13 128g",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764496301.A.7AF.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "高雄",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 台中iPhone 15Pro 256G原色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764500589.A.D0E.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "台中",
+      "price": "$17000"
+    },
+    {
+      "title": "[販售] 桃園 Mac Studio M1 MAX / 32G / 512G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764501147.A.846.html",
+      "date": "11/30",
+      "category": "MacBook",
+      "location": "桃園",
+      "price": "$24000"
+    },
+    {
+      "title": "[販售] 台中 二手iPhone SE3 128g 白",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1764504190.A.72D.html",
+      "date": "11/30",
+      "category": "iPhone",
+      "location": "台中",
       "price": "詳內文"
     },
     {
@@ -106,7 +210,7 @@
       "price": "$16500"
     },
     {
-      "title": "[販售] 台北 全新AirPods Pro 3",
+      "title": "[販售] 台北 全新AirPods Pro 3 (售出）",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1764485105.A.26D.html",
       "date": "11/30",
       "category": "AirPods",
@@ -130,7 +234,7 @@
       "price": "詳內文"
     },
     {
-      "title": "[販售] 台北  ipad mini 5 64G wifi太空灰",
+      "title": "[販售] 台北  ipad mini 5 64G （已售出",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1764486335.A.29E.html",
       "date": "11/30",
       "category": "iPad",
@@ -274,7 +378,7 @@
       "price": "$34000"
     },
     {
-      "title": "[販售] 雙北 iPhone 13 Pro Max 256G 天峰藍",
+      "title": "[販售] 雙北 iPhone 13 Pro Max 256G 售出",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1764426311.A.0F4.html",
       "date": "11/29",
       "category": "iPhone",
@@ -690,7 +794,7 @@
       "price": "$12000"
     },
     {
-      "title": "[販售] 台北 HomePod mini 白色全新",
+      "title": "[販售] 台北 HomePod mini 白色全新（售出）",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1764385318.A.FCB.html",
       "date": "11/29",
       "category": "HomePod",
@@ -832,118 +936,6 @@
       "category": "iPhone",
       "location": "台北",
       "price": "$9000"
-    },
-    {
-      "title": "[販售] 台中Apple Watch Ultra",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764335782.A.A68.html",
-      "date": "11/28",
-      "category": "Apple Watch",
-      "location": "台中",
-      "price": "$9500"
-    },
-    {
-      "title": "[販售]全國/台北 iPhone 13 Pro 256G 天峰藍",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764336209.A.D1F.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "台北",
-      "price": "$9500"
-    },
-    {
-      "title": "[販售] 台北 iPhone 17 pro max 256 藍 全新",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764337360.A.A58.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "台北",
-      "price": "$41000"
-    },
-    {
-      "title": "[販售] 台北iphone 17 Pro 256GB 紫色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764337953.A.A18.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "台北",
-      "price": "$27500"
-    },
-    {
-      "title": "[販售] 新竹 AirPods Max 第一代 二手 一年保固",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764338646.A.AD7.html",
-      "date": "11/28",
-      "category": "AirPods",
-      "location": "新竹",
-      "price": "$11000"
-    },
-    {
-      "title": "[販售]  桃園 iPhone  8 plus 64g 黑色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764338699.A.D92.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "桃園",
-      "price": "$2000"
-    },
-    {
-      "title": "[販售] 台中 iPhone 14 Pro 128G 金色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764339621.A.BB8.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "台中",
-      "price": "$11000"
-    },
-    {
-      "title": "[販售] 台北 信義區 iPhone Pocket 黑色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764339842.A.BED.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "台北",
-      "price": "$4990"
-    },
-    {
-      "title": "[販售] 新竹 iPhone 15 Pro Max 白256G / 512G",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764340030.A.290.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "新竹",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 新北 iPhone15 Pro 256G鈦原色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764340220.A.DAE.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "新北",
-      "price": "$15800"
-    },
-    {
-      "title": "[販售] 雙北 iPhone 16 Pro 二手極新",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764342281.A.D52.html",
-      "date": "11/28",
-      "category": "iPhone",
-      "location": "",
-      "price": "$25300"
-    },
-    {
-      "title": "[販售] 雙北 AirPods Pro 1",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764342534.A.E08.html",
-      "date": "11/28",
-      "category": "AirPods",
-      "location": "",
-      "price": "$1500"
-    },
-    {
-      "title": "[販售] 台中 AirPods 4 主動式降噪款",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764344281.A.DD5.html",
-      "date": "11/28",
-      "category": "AirPods",
-      "location": "台中",
-      "price": "$3000"
-    },
-    {
-      "title": "[販售] Mac mini M4 256g/16 「已預訂」",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1764347470.A.CAD.html",
-      "date": "11/29",
-      "category": "MacBook",
-      "location": "",
-      "price": "詳內文"
     }
   ]
 }
