@@ -1,6 +1,38 @@
 {
-  "updated_at": "2026/07/06 15:41",
+  "updated_at": "2026/07/07 03:37",
   "data": [
+    {
+      "title": "[販售] 台中 iPad Pro 12.9 M1 128g LTE",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783390822.A.462.html",
+      "date": "7/07",
+      "category": "iPad",
+      "location": "台中",
+      "price": "$26000"
+    },
+    {
+      "title": "[販售] 全國 Watch s11 AirTag iPad AirPods Max",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783390859.A.8D3.html",
+      "date": "7/07",
+      "category": "iPad",
+      "location": "",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 新北 airpods pro 2 lighting、airpods2",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783391546.A.7CE.html",
+      "date": "7/07",
+      "category": "AirPods",
+      "location": "新北",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 桃園 iPhone 17 Pro 256g 銀色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783392338.A.CFF.html",
+      "date": "7/07",
+      "category": "iPhone",
+      "location": "桃園",
+      "price": "$36700"
+    },
     {
       "title": "[販售] 全國 iPhone 13 128G 星光色",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783349717.A.CE7.html",
@@ -32,6 +64,62 @@
       "category": "MacBook",
       "location": "台南",
       "price": "$28000"
+    },
+    {
+      "title": "[販售] 新竹 Macbook Air 13 M4 16G/512G 天空藍",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783352490.A.780.html",
+      "date": "7/06",
+      "category": "MacBook",
+      "location": "新竹",
+      "price": "$34000"
+    },
+    {
+      "title": "[販售] 全國 airpods pro3（全新電商貨）",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783354843.A.CE8.html",
+      "date": "7/07",
+      "category": "AirPods",
+      "location": "",
+      "price": "$5700"
+    },
+    {
+      "title": "[販售] 全國 MacBook Air 13\" M2 8G/256G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783355232.A.A89.html",
+      "date": "7/07",
+      "category": "MacBook",
+      "location": "",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 台北 AirTag 1代 430元",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783360888.A.3EA.html",
+      "date": "7/07",
+      "category": "AirTag",
+      "location": "台北",
+      "price": "$430"
+    },
+    {
+      "title": "[販售] 高雄 iPad a16 128g 銀色 有包膜",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783384770.A.319.html",
+      "date": "7/07",
+      "category": "iPad",
+      "location": "高雄",
+      "price": "$11000"
+    },
+    {
+      "title": "[販售] 全國/ 台中北屯 IPhone 13 128G 粉色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783385243.A.7C0.html",
+      "date": "7/07",
+      "category": "iPhone",
+      "location": "台中",
+      "price": "$6300"
+    },
+    {
+      "title": "[販售] 全國 alto壓紋皮革支架手機殼 iPhone 17",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783388294.A.3E3.html",
+      "date": "7/07",
+      "category": "iPhone",
+      "location": "",
+      "price": "$790"
     },
     {
       "title": "[販售] 全國 Airpods pro 3 全新",
@@ -370,14 +458,6 @@
       "price": "$29000"
     },
     {
-      "title": "[販售] 台中 Apple Watch SE3 40mm 全新",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783260151.A.F1F.html",
-      "date": "7/05",
-      "category": "iPhone",
-      "location": "台中",
-      "price": "$6300"
-    },
-    {
       "title": "[販售] 全國 iPhone 12 pro 256G",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783260171.A.E91.html",
       "date": "7/05",
@@ -688,94 +768,6 @@
       "category": "AirTag",
       "location": "高雄",
       "price": "$700"
-    },
-    {
-      "title": "[販售] 售出 台北 iPad 11 256/ AirPods Max",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783152369.A.39F.html",
-      "date": "7/04",
-      "category": "iPad",
-      "location": "台北",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 新北 iPad mini 7 128g WiFi 藍色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783156971.A.7AC.html",
-      "date": "7/04",
-      "category": "iPad",
-      "location": "新北",
-      "price": "$11000"
-    },
-    {
-      "title": "[販售] 新竹 iPad Air M4 128G11吋（售出）",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783157932.A.CC4.html",
-      "date": "7/04",
-      "category": "iPad",
-      "location": "新竹",
-      "price": "$21000"
-    },
-    {
-      "title": "[販售] 全國 Apple TV 4K 全新未拆",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783158458.A.A16.html",
-      "date": "7/04",
-      "category": "Apple TV",
-      "location": "",
-      "price": "$6400"
-    },
-    {
-      "title": "[販售] 台中  iPad air 4 銀色 64GB",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783158867.A.48E.html",
-      "date": "7/04",
-      "category": "iPad",
-      "location": "台中",
-      "price": "$5800"
-    },
-    {
-      "title": "[販售]新竹 iPhone 17 pro max 256GB 藍",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783161327.A.4A1.html",
-      "date": "7/04",
-      "category": "iPhone",
-      "location": "新竹",
-      "price": "$40500"
-    },
-    {
-      "title": "[販售] 高雄 Apple Watch S11/iPhone 15 Pro/XR",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783161358.A.9A1.html",
-      "date": "7/04",
-      "category": "iPhone",
-      "location": "高雄",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 台南 air pods2 A2031",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783162653.A.9FE.html",
-      "date": "7/04",
-      "category": "AirPods",
-      "location": "台南",
-      "price": "$600"
-    },
-    {
-      "title": "[販售] 新北 Airpods Max 2 (已售出)",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783162658.A.5EC.html",
-      "date": "7/04",
-      "category": "AirPods",
-      "location": "新北",
-      "price": "$14500"
-    },
-    {
-      "title": "[販售] 雙北 iPad Air 紫色 11吋512g",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783166323.A.B21.html",
-      "date": "7/04",
-      "category": "iPad",
-      "location": "",
-      "price": "$25000"
-    },
-    {
-      "title": "[販售] 全國 iPhone 14 Pro 128g",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783172075.A.447.html",
-      "date": "7/04",
-      "category": "iPhone",
-      "location": "",
-      "price": "$9500"
     }
   ]
 }
