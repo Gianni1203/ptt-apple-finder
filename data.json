@@ -1,6 +1,126 @@
 {
-  "updated_at": "2026/07/09 15:18",
+  "updated_at": "2026/07/10 03:34",
   "data": [
+    {
+      "title": "[販售] 全國 AirPods 4降噪版",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783650664.A.B9C.html",
+      "date": "7/10",
+      "category": "AirPods",
+      "location": "",
+      "price": "$4300"
+    },
+    {
+      "title": "[販售] 全國 iPhone 17 pro 科技織紋保護殼 藍",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783651471.A.2D0.html",
+      "date": "7/10",
+      "category": "iPhone",
+      "location": "",
+      "price": "$800"
+    },
+    {
+      "title": "[販售] 高雄 iPhone 17 Pro max 256 銀",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783653668.A.D3B.html",
+      "date": "7/10",
+      "category": "iPhone",
+      "location": "高雄",
+      "price": "$40500"
+    },
+    {
+      "title": "[販售] 台北面交 airtag 1 二手 兩個",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783654070.A.A4C.html",
+      "date": "7/10",
+      "category": "AirTag",
+      "location": "台北",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 台南 IPhone 15 pro max 512GB 鈦色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783610252.A.91E.html",
+      "date": "7/09",
+      "category": "iPhone",
+      "location": "台南",
+      "price": "$22000"
+    },
+    {
+      "title": "[販售] 台南 iPhone Air 太空灰512G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783610644.A.79D.html",
+      "date": "7/09",
+      "category": "iPhone",
+      "location": "台南",
+      "price": "$35000"
+    },
+    {
+      "title": "[販售] iPhone 17 pro max 宇宙橙 512G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783610868.A.C39.html",
+      "date": "7/09",
+      "category": "iPhone",
+      "location": "",
+      "price": "$48000"
+    },
+    {
+      "title": "[販售] 台南 全新未拆封AIRPODS PRO 3",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783610912.A.D58.html",
+      "date": "7/09",
+      "category": "AirPods",
+      "location": "台南",
+      "price": "$5800"
+    },
+    {
+      "title": "[販售] 全國 iPad Air M4 128G 11\" 星光色 $20000",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783611894.A.D58.html",
+      "date": "7/09",
+      "category": "iPad",
+      "location": "",
+      "price": "$20000"
+    },
+    {
+      "title": "[販售] 中壢 iphone 17e 256g 白色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783611993.A.796.html",
+      "date": "7/09",
+      "category": "iPhone",
+      "location": "",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] MacBook Pro M1 8G/512G 銀",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783635286.A.72E.html",
+      "date": "7/10",
+      "category": "MacBook",
+      "location": "",
+      "price": "$18000"
+    },
+    {
+      "title": "[販售] 桃園iphone11 128G 黑色（已售出）",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783641520.A.C6C.html",
+      "date": "7/10",
+      "category": "iPhone",
+      "location": "桃園",
+      "price": "$3000"
+    },
+    {
+      "title": "[販售] 台中 iPhone 17 256G 霧藍",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783647094.A.93A.html",
+      "date": "7/10",
+      "category": "iPhone",
+      "location": "台中",
+      "price": "$25800"
+    },
+    {
+      "title": "[販售] 高雄 iPhone 16e 256GB 白色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783647849.A.534.html",
+      "date": "7/10",
+      "category": "iPhone",
+      "location": "高雄",
+      "price": "$13500"
+    },
+    {
+      "title": "[販售] 台南 AirPods Pro 3（全新未拆）",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1783650094.A.9B9.html",
+      "date": "7/10",
+      "category": "AirPods",
+      "location": "台南",
+      "price": "$5700"
+    },
     {
       "title": "[販售] 台中 iPhone 17 pro 256GB 橙 （保內）",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783587247.A.915.html",
@@ -290,7 +410,7 @@
       "price": "$20500"
     },
     {
-      "title": "[販售] 雙北 m1pro MacBook 14’ 32GB/1TB/美式",
+      "title": "[販售] (已售出）雙北 m1pro MacBook 14’ 32GB/1TB/美式",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783542642.A.06B.html",
       "date": "7/09",
       "category": "MacBook",
@@ -370,20 +490,12 @@
       "price": "$37500"
     },
     {
-      "title": "[販售] 新竹iPhone XS max 256G金",
+      "title": "[販售] 新竹iPhone XS max 256G金（售出）",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783566936.A.180.html",
       "date": "7/09",
       "category": "iPhone",
       "location": "新竹",
       "price": "詳內文"
-    },
-    {
-      "title": "[販售] 台南 Apple Watch S10 46mm 原鈦金屬",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783512373.A.3F2.html",
-      "date": "7/08",
-      "category": "Apple Watch",
-      "location": "台南",
-      "price": "$11000"
     },
     {
       "title": "[販售] 全國 零件機 ipad mini 7 暫售",
@@ -674,7 +786,7 @@
       "price": "$31000"
     },
     {
-      "title": "[販售] 台中 MacBook Air M5 24G/1T 13寸",
+      "title": "[販售] 售出 台中 MacBook Air M5 24G/1T 13寸",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783491318.A.6CB.html",
       "date": "7/08",
       "category": "MacBook",
@@ -690,12 +802,12 @@
       "price": "$5700"
     },
     {
-      "title": "[販售] 全國 iPad Air M4 128G 11 藍",
+      "title": "[販售] 全國 iPad Air M4 128G 11 藍 (已售出）",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783429257.A.A6C.html",
       "date": "7/07",
       "category": "iPad",
       "location": "",
-      "price": "$20500"
+      "price": "詳內文"
     },
     {
       "title": "[販售] 宜蘭 Apple Mac mini 2023年 M2",
@@ -858,7 +970,7 @@
       "price": "$12900"
     },
     {
-      "title": "[販售] 高雄 MacBook air m5 15\"16+512全新",
+      "title": "[販售] 高雄 MacBook air m5售出",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1783426204.A.A14.html",
       "date": "7/07",
       "category": "MacBook",
@@ -888,166 +1000,6 @@
       "category": "iPad",
       "location": "",
       "price": "$4000"
-    },
-    {
-      "title": "[販售] 台中 iPad Pro 12.9 M1 128g LTE",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783390822.A.462.html",
-      "date": "7/07",
-      "category": "iPad",
-      "location": "台中",
-      "price": "$26000"
-    },
-    {
-      "title": "[販售] 全國 Watch s11 AirTag iPad AirPods Max",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783390859.A.8D3.html",
-      "date": "7/07",
-      "category": "iPad",
-      "location": "",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 新北 airpods pro 2 lighting、airpods2",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783391546.A.7CE.html",
-      "date": "7/07",
-      "category": "AirPods",
-      "location": "新北",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 桃園 iPhone 17 Pro 256g 銀色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783392338.A.CFF.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "桃園",
-      "price": "$36700"
-    },
-    {
-      "title": "[販售] 台中 iPhone15 128G粉",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783401571.A.0F0.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "台中",
-      "price": "$11000"
-    },
-    {
-      "title": "[販售] 新北 iPhone 17 512 白色 全新未拆",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783402344.A.E6E.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "新北",
-      "price": "$33300"
-    },
-    {
-      "title": "[販售] 售出 iPhone 12 Pro 128G 太平洋藍色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783407601.A.53E.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 台中 iPhone 11 128 黑色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783410701.A.97A.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "台中",
-      "price": "$3000"
-    },
-    {
-      "title": "[販售] 竹苗 iphone 17 pro max 256G 白 已預訂",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783411002.A.4DD.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "",
-      "price": "$40500"
-    },
-    {
-      "title": "[販售] 全國 iPhone 13 128G 星光色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783349717.A.CE7.html",
-      "date": "7/06",
-      "category": "iPhone",
-      "location": "",
-      "price": "$6600"
-    },
-    {
-      "title": "[販售] 全國 Mac Mini Magic Mouse/Keyboard",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783350040.A.4DF.html",
-      "date": "7/06",
-      "category": "MacBook",
-      "location": "",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 台南 iPhone 15 Pro Max 256G 原色鈦金屬",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783350270.A.8A5.html",
-      "date": "7/06",
-      "category": "iPhone",
-      "location": "台南",
-      "price": "$16000"
-    },
-    {
-      "title": "[販售] 台南 MacBook Pro m3 銀色8g/512g",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783351947.A.14C.html",
-      "date": "7/06",
-      "category": "MacBook",
-      "location": "台南",
-      "price": "$28000"
-    },
-    {
-      "title": "[販售] 新竹 Macbook Air M4 13 16G/512G藍(降價)",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783352490.A.780.html",
-      "date": "7/06",
-      "category": "MacBook",
-      "location": "新竹",
-      "price": "$32000"
-    },
-    {
-      "title": "[販售] 全國 airpods pro3（全新電商貨）",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783354843.A.CE8.html",
-      "date": "7/07",
-      "category": "AirPods",
-      "location": "",
-      "price": "$5700"
-    },
-    {
-      "title": "[販售] 全國 MacBook Air 13\" M2 8G/256G",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783355232.A.A89.html",
-      "date": "7/07",
-      "category": "MacBook",
-      "location": "",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 台北 AirTag 1代 420元",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783360888.A.3EA.html",
-      "date": "7/07",
-      "category": "AirTag",
-      "location": "台北",
-      "price": "$420"
-    },
-    {
-      "title": "[販售] 高雄 iPad a16 128g 銀色 有包膜",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783384770.A.319.html",
-      "date": "7/07",
-      "category": "iPad",
-      "location": "高雄",
-      "price": "$11000"
-    },
-    {
-      "title": "[販售] 全國/ 台中北屯 IPhone 13 128G 粉色",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783385243.A.7C0.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "台中",
-      "price": "$6100"
-    },
-    {
-      "title": "[販售] 全國 alto壓紋皮革支架手機殼 iPhone 17",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1783388294.A.3E3.html",
-      "date": "7/07",
-      "category": "iPhone",
-      "location": "",
-      "price": "$790"
     }
   ]
 }
