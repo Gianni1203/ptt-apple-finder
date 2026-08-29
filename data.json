@@ -1,6 +1,102 @@
 {
-  "updated_at": "2026/08/28 21:52",
+  "updated_at": "2026/08/29 06:09",
   "data": [
+    {
+      "title": "[販售] 新竹台北MacBook Air M3 15”",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787956222.A.03A.html",
+      "date": "8/29",
+      "category": "MacBook",
+      "location": "台北",
+      "price": "$25000"
+    },
+    {
+      "title": "[販售] 雙北 Mac mini m4 16g/256g 保固中",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787961820.A.CF5.html",
+      "date": "8/29",
+      "category": "MacBook",
+      "location": "",
+      "price": "$23000"
+    },
+    {
+      "title": "[販售] 台中 iPhone 15 128G 黃色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787962342.A.C78.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "台中",
+      "price": "$12000"
+    },
+    {
+      "title": "[販售] 新北 ipad mini 7 (A17 pro) 128g",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787963600.A.CE4.html",
+      "date": "8/29",
+      "category": "iPad",
+      "location": "新北",
+      "price": "$13000"
+    },
+    {
+      "title": "[販售] 台中/台北 iPhone 14 pro 256G 黑",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787968788.A.7DD.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "台北",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 高屏 iPhone 17 pro max 256g 藍色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787971128.A.36C.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 新北 iPhone 13 256G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787971934.A.255.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "新北",
+      "price": "$6500"
+    },
+    {
+      "title": "[販售] 高雄 iPhone 15 Pro Max512g 鈦原色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787975066.A.FBF.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "高雄",
+      "price": "$22000"
+    },
+    {
+      "title": "[販售] 台南 iPhone XR 黑色128G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787975683.A.C67.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "台南",
+      "price": "$1800"
+    },
+    {
+      "title": "[販售] 台北 iPhone 16 Pro Max 256GB 黑 原盒",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787976371.A.B15.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "台北",
+      "price": "$27500"
+    },
+    {
+      "title": "[販售] 全國 iPhone 17 pro 256/15 128/airpod",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787976375.A.58C.html",
+      "date": "8/29",
+      "category": "iPhone",
+      "location": "",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 台中 MacBook Air M5 13’ 16/512G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1787979571.A.4D3.html",
+      "date": "8/29",
+      "category": "MacBook",
+      "location": "台中",
+      "price": "$38000"
+    },
     {
       "title": "[販售] 台北 iPhone 17 Pro Max 512G 銀色",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1787919103.A.476.html",
@@ -242,12 +338,12 @@
       "price": "$9500"
     },
     {
-      "title": "[販售] 雙北 2025 Macbook Pro 14吋 24G 1TB 銀",
+      "title": "[販售] 售出 雙北 2025 Macbook Pro 14吋 24G 1T",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1787893968.A.765.html",
       "date": "8/28",
       "category": "MacBook",
       "location": "",
-      "price": "$56000"
+      "price": "詳內文"
     },
     {
       "title": "[販售] 桃園 iPhone 15 Pro Max 512G（售出）",
@@ -298,7 +394,7 @@
       "price": "詳內文"
     },
     {
-      "title": "[販售] 台南  iPhone 14 Pro 金色 86% ios16.6",
+      "title": "[販售] 台南  iPhone 14 Pro 金色(已售出",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1787842956.A.26A.html",
       "date": "8/27",
       "category": "iPhone",
@@ -442,7 +538,7 @@
       "price": "$19500"
     },
     {
-      "title": "[販售] 新竹 Apple Watch SE3 40mm 星光色",
+      "title": "[販售] 新竹 已售出 Apple Watch SE3",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1787835648.A.7FF.html",
       "date": "8/27",
       "category": "iPhone",
@@ -840,70 +936,6 @@
       "category": "AirPods",
       "location": "",
       "price": "$14400"
-    },
-    {
-      "title": "[販售] 台北 Mac mini 16/256 已售出",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787701799.A.0F7.html",
-      "date": "8/26",
-      "category": "MacBook",
-      "location": "台北",
-      "price": "$19500"
-    },
-    {
-      "title": "[販售] 全國 iPad 11 A16 128G Wi-Fi 銀",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787707569.A.536.html",
-      "date": "8/26",
-      "category": "iPad",
-      "location": "",
-      "price": "$12000"
-    },
-    {
-      "title": "[販售] 台北 MacBook Air 13” M2 8G/256G",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787709125.A.D91.html",
-      "date": "8/26",
-      "category": "MacBook",
-      "location": "台北",
-      "price": "$14000"
-    },
-    {
-      "title": "[販售] 全國 iphone 12 pro 128g 金(暫售)",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787709416.A.134.html",
-      "date": "8/26",
-      "category": "iPhone",
-      "location": "",
-      "price": "$5000"
-    },
-    {
-      "title": "[販售] 新北 （售出）全新AirPods 4降噪版",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787715286.A.6AC.html",
-      "date": "8/26",
-      "category": "AirPods",
-      "location": "新北",
-      "price": "詳內文"
-    },
-    {
-      "title": "[販售] 台中 Apple TV 第三代 4K 128G",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787717352.A.21A.html",
-      "date": "8/26",
-      "category": "Apple TV",
-      "location": "台中",
-      "price": "$6300"
-    },
-    {
-      "title": "[販售] 台北 iPad Pro M4 13吋 1TB奈米玻璃",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787724137.A.FC6.html",
-      "date": "8/26",
-      "category": "iPad",
-      "location": "台北",
-      "price": "$41000"
-    },
-    {
-      "title": "[販售] 全國 AirPods Pro 一代 左耳 lightning線",
-      "link": "https://www.ptt.cc/bbs/MacShop/M.1787726523.A.479.html",
-      "date": "8/26",
-      "category": "AirPods",
-      "location": "",
-      "price": "詳內文"
     }
   ]
 }
