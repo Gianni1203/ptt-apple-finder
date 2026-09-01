@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026/08/31 18:59",
+  "updated_at": "2026/09/01 04:07",
   "data": [
     {
       "title": "[販售]  雲林 Iphone 13mini 128GB 白",
@@ -64,6 +64,30 @@
       "category": "iPad",
       "location": "",
       "price": "$8500"
+    },
+    {
+      "title": "[販售] 新北 apple watch s11",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1788227523.A.0EF.html",
+      "date": "9/01",
+      "category": "Apple Watch",
+      "location": "新北",
+      "price": "詳內文"
+    },
+    {
+      "title": "[販售] 台北MacBook Pro 14吋 M5 16G/512G",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1788227931.A.C17.html",
+      "date": "9/01",
+      "category": "MacBook",
+      "location": "台北",
+      "price": "$50000"
+    },
+    {
+      "title": "[販售] 新北 iphone 16 pro 256GB 黑色",
+      "link": "https://www.ptt.cc/bbs/MacShop/M.1788230616.A.FF1.html",
+      "date": "9/01",
+      "category": "iPhone",
+      "location": "新北",
+      "price": "$24000"
     },
     {
       "title": "[販售] 全國 Airtag2 全新品",
@@ -258,7 +282,7 @@
       "price": "$1800"
     },
     {
-      "title": "[販售] 台北 AirTag 2代 四入裝 2650元",
+      "title": "[販售] 台北 AirTag 2代 四入裝 2650元(已售出）",
       "link": "https://www.ptt.cc/bbs/MacShop/M.1788080778.A.375.html",
       "date": "8/30",
       "category": "AirTag",
