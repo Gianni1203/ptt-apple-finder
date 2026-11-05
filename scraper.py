@@ -1,7 +1,5 @@
-import cloudscraper
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import sys
+from curl_cffi import requests as cffi_requests
 from bs4 import BeautifulSoup
 import json
 import time
@@ -14,34 +12,34 @@ BASE_URL = "https://www.ptt.cc/bbs/MacShop/index.html"
 DOMAIN = "https://www.ptt.cc"
 PAGES_TO_SCRAPE = 10 
 
-# 隨機 User-Agent 清單
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0"
-]
+# 模擬真實 Chrome 的 TLS / HTTP2 指紋（PTT 前面的 Cloudflare 會擋 python-requests / cloudscraper 的指紋）
+IMPERSONATE = "chrome"
+
+class RobustSession:
+    """ curl_cffi Session + 簡單的重試（取代原本的 cloudscraper + HTTPAdapter） """
+    def __init__(self, retries=4, backoff=2):
+        self.s = cffi_requests.Session(impersonate=IMPERSONATE)
+        self.s.headers.update({"Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8"})
+        self.retries = retries
+        self.backoff = backoff
+
+    def get(self, url, timeout=30):
+        last_exc = None
+        for attempt in range(self.retries + 1):
+            try:
+                resp = self.s.get(url, timeout=timeout)
+                if resp.status_code in (429, 500, 502, 503, 504):
+                    raise RuntimeError(f"HTTP {resp.status_code}")
+                return resp
+            except Exception as e:
+                last_exc = e
+                wait = self.backoff * (2 ** attempt)
+                print(f"    retry {attempt+1}/{self.retries} after {wait}s ({e})")
+                time.sleep(wait)
+        raise last_exc
 
 def create_robust_session():
-    """ 建立一個抗斷線的 Session """
-    # 建立 cloudscraper 物件
-    session = cloudscraper.create_scraper()
-    
-    # 設定重試策略：
-    # total=5: 最多重試 5 次
-    # backoff_factor=1: 每次失敗後等待時間會加倍 (1s, 2s, 4s...)
-    # status_forcelist: 遇到 500, 502, 503, 504 錯誤時也要重試
-    retries = Retry(
-        total=5,
-        backoff_factor=2, 
-        status_forcelist=[500, 502, 503, 504],
-        allowed_methods=["HEAD", "GET", "OPTIONS"]
-    )
-    
-    adapter = HTTPAdapter(max_retries=retries)
-    session.mount("https://", adapter)
-    session.mount("http://", adapter)
-    return session
+    return RobustSession()
 
 def get_posts(pages=10):
     posts = []
@@ -56,17 +54,14 @@ def get_posts(pages=10):
         print(f"Processing list page {i+1}...")
         
         try:
-            # 隨機切換 User-Agent
-            headers = {"User-Agent": random.choice(USER_AGENTS)}
-            
             # 隨機延遲 (很重要！)
             time.sleep(random.uniform(3, 6))
             
             # 發送請求 (這裡如果有 Connection Reset，adapter 會自動重試)
-            resp = session.get(url, headers=headers, timeout=30)
+            resp = session.get(url, timeout=30)
             
             if resp.status_code != 200:
-                print(f"  Failed with status {resp.status_code}. Skipping this page.")
+                print(f"  Failed with status {resp.status_code}. Body head: {resp.text[:200]!r}")
                 break # 如果真的抓不到，就停止
             
             # --- 解析 HTML ---
@@ -128,8 +123,7 @@ def get_price_from_content(session, link):
     """ 進入文章內文，抓取價格 """
     try:
         # 這裡也要用 session 發請求，才能享有重試機制
-        headers = {"User-Agent": random.choice(USER_AGENTS)}
-        resp = session.get(link, headers=headers, timeout=15)
+        resp = session.get(link, timeout=15)
         
         if resp.status_code != 200: return "詳內文"
         
@@ -186,3 +180,5 @@ if __name__ == "__main__":
         print(f"Done! Scraped {len(data)} items.")
     else:
         print("Warning: Scraped 0 items. Keeping old data.json to prevent empty site.")
+        # 讓 Actions 顯示為失敗，才不會像之前一樣「綠勾勾但其實沒抓到」好幾週沒人發現
+        sys.exit(1)
